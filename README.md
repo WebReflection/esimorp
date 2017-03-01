@@ -51,3 +51,6 @@ function fetchy(url) {
   return out;
 }
 ```
+
+### License
+(C) 2017 Andrea Giammarchi, @WebReflection, MIT Style License.
