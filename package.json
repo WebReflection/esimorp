@@ -1,0 +1,39 @@
+{
+  "name": "esimorp",
+  "version": "0.0.0",
+  "description": "Inside Out Promises",
+  "main": "esimorp.es5.js",
+  "scripts": {
+    "build": "npm test && npm run minify && npm run size",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "es5": "ESIMORP='es5' npm test",
+    "es6": "ESIMORP='es6' npm test",
+    "min": "ESIMORP='min' npm test",
+    "minify": "uglifyjs es5.js --comments=/^!/ --compress --mangle -o min.js",
+    "size": "cat es5.js | wc -c;cat es6.js | wc -c;gzip -c min.js | wc -c",
+    "test": "istanbul cover test/test.js",
+    "test-all": "npm run min && sleep 2 && npm run es6 && sleep 2 && npm run es5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/esimorp.git"
+  },
+  "keywords": [
+    "promise",
+    "resolvable",
+    "rejectable",
+    "cancelable"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WebReflection/esimorp/issues"
+  },
+  "homepage": "https://github.com/WebReflection/esimorp#readme",
+  "devDependencies": {
+    "coveralls": "^2.11.16",
+    "istanbul": "^0.4.5",
+    "tressa": "^0.2.0",
+    "uglify-js": "^2.8.4"
+  }
+}
