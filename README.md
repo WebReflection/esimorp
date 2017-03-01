@@ -52,5 +52,17 @@ function fetchy(url) {
 }
 ```
 
+  * _what else could I do with this ?_ You could create Promises with a timeout and resolve or reject them before.
+
+```js
+const p = new Esimorp((res, rej) => {
+  // reject in 5 seconds
+  setTimeout(rej, 5000, 'timeout');
+});
+
+// but if resolved or rejected first is OK
+setTimeout(() => p.resolve('OK'), 1000);
+```
+
 ### License
 (C) 2017 Andrea Giammarchi, [@WebReflection](https://twitter.com/WebReflection/), MIT Style License.
