@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Inside Out Promises",
   "main": "es5.js",
+  "unpkg": "min.js",
   "scripts": {
     "build": "npm test && npm run minify && npm run size",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
@@ -25,7 +26,7 @@
     "cancelable"
   ],
   "author": "Andrea Giammarchi",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/WebReflection/esimorp/issues"
   },
